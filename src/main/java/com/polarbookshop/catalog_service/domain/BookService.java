@@ -29,7 +29,7 @@ public class BookService {
         bookRepository.deleteByIsbn(isbn);
     }
 
-    public void editBookDetails(String isbn, Book book) {
+    public Book editBookDetails(String isbn, Book book) {
         return bookRepository.findByIsbn(isbn)
                 .map(existingBook -> {
                     var bookToUpdate = new Book(
